@@ -1,0 +1,130 @@
+<br><br><br><br><br>
+<div class="container d-flex justify-content-center">
+      <div *ngIf="companyDetails" class="card company-details">
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Company Name </label>
+                    </div>
+                    <div class="col-md-6">
+                        <p>: {{companyDetails.name}}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Open Rate</label>
+                    </div>
+                    <div class="col-md-6">
+                        <p>: {{companyDetails.open_rate}}</p>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Closing Rate</label>
+                    </div>
+                    <div class="col-md-6">
+                        <p>: {{companyDetails.close_rate}}</p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Today's Peak Rate</label>
+                    </div>
+                    <div class="col-md-6">
+                        <p>: {{companyDetails.peak_rate}}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Today's Least Rate</label>
+                  </div>
+                  <div class="col-md-6">
+                      <p>: {{companyDetails.least_rate}}</p>
+                  </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+
+                <div class="row">
+                <div class="col-md-6">
+                    <label>52 Week High</label>
+                </div>
+                <div class="col-md-6">
+                    <p>: {{companyDetails.year_high}}</p>
+                </div>
+                </div>
+
+                <div class="row">
+                <div class="col-md-6">
+                    <label>52 Week Low</label>
+                </div>
+                <div class="col-md-6">
+                    <p>: {{companyDetails.year_low}}</p>
+                </div>
+                </div>
+
+                <div class="row">
+                <div class="col-md-6">
+                    <label>Market Cap</label>
+                </div>
+                <div class="col-md-6">
+                    <p>: {{companyDetails.market_cap}}</p>
+                </div>
+                </div>
+
+                <div class="row">
+                <div class="col-md-6">
+                    <label>Price/Earings ratio</label>
+                </div>
+                <div class="col-md-6">
+                    <p>: {{companyDetails.p_e_ratio}}</p>
+                </div>
+                </div>
+ 
+                <div class="row">
+                <div class="col-md-6">
+                    <label>Volume</label>
+                </div>
+                <div class="col-md-6">
+                    <p>: {{companyDetails.volume}}</p>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <div *ngIf="companyDetails" class=" d-flex justify-content-center">
+            <div class="about">
+                <div class="sell-heading">Cost When You Bought :</div><div class="sell-value"> {{companyDetails.bought_rate}}</div><br><br>
+                <div class="sell-heading">Available Quantity :</div><div class="sell-value"> {{companyDetails.quantity}}</div>
+            </div>
+        </div>
+
+        <br>
+        <div class="">
+            <form>
+                <div class="row">
+                    <div class="col-sm-1">
+                    </div>
+                    <div class="col-sm-4">                        
+                        <input type="text" required class="form-control" name="quantity" 
+                [(ngModel)]=quantity #qty="ngModel" minlength="3" placeholder="Enter Quantity">
+                    </div>
+                    <div class="col-sm-1">
+                        
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="submit" [disabled]="!checkQuantity(qty,companyDetails.quantity)" class="btn btn-success sell-btn" (click)="sellItem()">Sell </button>
+                    </div>
+                </div>               
+               
+            </form>
+        </div>
+  </div>
+</div>

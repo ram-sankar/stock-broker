@@ -1,0 +1,36 @@
+.card
+{
+    height:100%;
+    margin-left:40px;
+    width:600px;
+    padding-left:50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.4);
+}
+.heading
+{
+    text-align:center;
+}
+.company-details label
+{
+    font-weight: 600;
+    color:orange
+}
+.company-details p
+{
+    font-weight: 600;
+    color:rebeccapurple
+}
+.buy-btn
+{
+    width:150px;
+    font-weight: 600;
+    font-size: 18px;
+}
+.about
+{
+    text-align: center;
+    margin-top:2%;
+    font-size: 20px;
+}

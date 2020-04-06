@@ -1,0 +1,55 @@
+.card
+{
+    height:100%;
+    margin-left:40px;
+    width:600px;
+    padding-left:50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.4);
+}
+.heading
+{
+    text-align:center;
+}
+.company-details label
+{
+    font-weight: 600;
+    color:green
+}
+.company-details p
+{
+    font-weight: 600;
+    color:black
+}
+.buy-btn
+{
+    margin-left:37%;
+}
+.sell-heading
+{
+    font-weight: 600;
+    color:green;
+    font-size: 20px;
+    display:inline;
+    margin-left:-100px;
+}
+.sell-value
+{
+    font-weight: 600;
+    color:red;
+    font-size: 20px;
+    position: absolute;
+    display:inline;
+    margin-left:5px;
+}
+.about
+{
+    text-align: center;
+}
+.sell-btn
+{
+    width:150px;
+    font-weight: 600;
+    font-size: 18px;
+}

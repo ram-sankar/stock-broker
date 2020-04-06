@@ -1,0 +1,122 @@
+<br><br><br>
+
+<div class="container ">
+  <br><br><br>
+    <div class="row">
+      <div class="col-md-7 ">
+
+        <div class="flex">
+          <div class="flex-item">
+            <div style="display: block;">
+            <canvas baseChart width="400" height="300"
+                        [datasets]="lineChartData"
+                        [labels]="lineChartLabels"
+                        [options]="lineChartOptions"
+                        [colors]="lineChartColors"
+                        [legend]="lineChartLegend"
+                        [chartType]="lineChartType"
+                        [plugins]="lineChartPlugins"
+                        (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="card col-md-4 company-details">
+            <div class="row">
+              <div class="col-md-6">
+                <label>Company Name </label>
+            </div>
+            <div class="col-md-6">
+                <p>: {{companyDetails.name}}</p>
+            </div>
+            </div>
+ 
+            <div class="row">
+              <div class="col-md-6">
+                <label>Open Rate</label>
+              </div>
+              <div class="col-md-6">
+                  <p>: {{companyDetails.open_rate}}</p>
+              </div>
+            </div>
+          
+            <div class="row">
+              <div class="col-md-6">
+                <label>Closing Rate</label>
+              </div>
+              <div class="col-md-6">
+                  <p>: {{companyDetails.close_rate}}</p>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-6">
+                <label>Today's Peak Rate</label>
+              </div>
+              <div class="col-md-6">
+                  <p>: {{companyDetails.peak_rate}}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <label>Today's Least Rate</label>
+              </div>
+              <div class="col-md-6">
+                  <p>: {{companyDetails.least_rate}}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <label>52 Week High</label>
+              </div>
+              <div class="col-md-6">
+                  <p>: {{companyDetails.year_high}}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <label>52 Week Low</label>
+              </div>
+              <div class="col-md-6">
+                  <p>: {{companyDetails.year_low}}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <label>Market Cap</label>
+              </div>
+              <div class="col-md-6">
+                  <p>: {{companyDetails.market_cap}}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <label>Price/Earings ratio</label>
+              </div>
+              <div class="col-md-6">
+                  <p>: {{companyDetails.p_e_ratio}}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <label>Volume</label>
+              </div>
+              <div class="col-md-6">
+                  <p>: {{companyDetails.volume}}</p>
+              </div>
+            </div>
+            <br>
+            <div class="heading">
+              <div class="btn btn-danger buy-btn" (click)="goToBuyPage()">Buy </div>
+            </div>
+      </div>
+    </div>
+  </div>

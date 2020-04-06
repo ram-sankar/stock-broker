@@ -1,0 +1,58 @@
+<div class="heading">
+    <h2>My Shares</h2> 
+
+    <div class="tableContainer scrollbar overflow-auto force-overflow" id="tableID"> 
+        <table *ngIf="myShares" class="table table-striped">
+                <thead class="coulmn_head">
+                <tr>
+                    <th>Company Name</th>
+                    <th>Current Rate</th>
+                    <th>Bought Rate</th>
+                    <th>Quantity</th>
+                    <th>Open Rate</th>
+                    <th>Close Rate</th>
+                    <th>Today's Peak Price</th>
+                    <th>Today's Low Price</th>
+                    <th>Year Low</th>
+                    <th>Year High</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let elements of myShares">
+                        <td>{{elements.name}}</td>
+                        <td>{{elements.current_rate}}</td>
+                        <td><b>{{elements.bought_rate}}</b></td>
+                        <td>{{elements.quantity}}</td>
+                        <td>{{elements.open_rate}}</td>
+                        <td>{{elements.close_rate}}</td>
+                        <td>{{elements.peak_rate}}</td>
+                        <td>{{elements.least_rate}}</td>
+                        <td>{{elements.year_low}}</td>
+                        <td>{{elements.year_high}}</td>
+                        <td>
+                            <button (click)="goToDetailedView(elements.company_id)" type="button" class="btn btn-info sell">Details</button>
+                        </td>
+                        <td>
+                            <button (click)="goToSellPage(elements.company_id)" type="button" class="btn btn-dark sell">sell</button>
+                        </td>
+                        <td>                                 
+                            <button (click)="goToBuyPage(elements.company_id)" type="button" class="btn btn-warning">buy</button>
+                        </td>
+                    </tr>   
+                    
+                </tbody>
+        </table>
+
+        
+        <p *ngIf="!myShares" class="noData">
+            No Records Found
+        </p>
+    </div>
+
+    
+    
+</div> 
