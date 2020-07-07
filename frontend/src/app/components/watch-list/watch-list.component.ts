@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GetDataService } from '../../services/get-data.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-watch-list',
@@ -9,16 +10,17 @@ import { GetDataService } from '../../services/get-data.service';
 })
 export class WatchListComponent implements OnInit {
 
-  constructor(private router: Router,private getDataservice: GetDataService) { }
+  constructor(private router: Router,private toastr: ToastrService, private getDataservice: GetDataService) { }
   watchList;
   ngOnInit() {
     this.loadData();
   }  
   loadData()
   {
-    this.getDataservice.getWatchList(sessionStorage.getItem('username'))
+    this.getDataservice.getWatchList(localStorage.getItem('username'))
     .subscribe(
       data => {
+        if(data.length)
           this.watchList = data;
       },
       error => {
@@ -26,13 +28,17 @@ export class WatchListComponent implements OnInit {
       }
     )
   }
-  removeFromWatchlist(companyId)
+  removeFromWatchlist(companyId, companyName)
   {
-    this.getDataservice.removeWatchList(sessionStorage.getItem('username'),companyId)
+    this.getDataservice.removeWatchList(localStorage.getItem('username'),companyId)
       .subscribe(
         data => {
             if(data.status=="success")
+            {
               this.loadData();
+              this.toastr.success('Successfully removed from your Watchlist', companyName,{positionClass:"toast-bottom-center"});
+            }
+              
         },
         error => {
             console.log(error)

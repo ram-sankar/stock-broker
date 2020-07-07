@@ -27,7 +27,7 @@ export class GetDataService {
   getWatchList(email)
   {
       this.url = this.baseUrl + "watch-list?email=" + email;
-      return this.http.get(this.url);       
+      return this.http.get<MyShareResponse>(this.url);       
   }
 
   getOneCompany(id)
@@ -51,7 +51,7 @@ export class GetDataService {
   addWatchList(email,id)
   {
     this.url = this.baseUrl + "add-watchlist/?email=" + email + "&id=" + id;
-    return this.http.get(this.url);     
+    return this.http.get<responseStatus>(this.url);     
   }
 
   removeWatchList(email,id)

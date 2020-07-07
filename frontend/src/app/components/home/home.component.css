@@ -1,6 +1,8 @@
 .heading{
     text-align: center;
-    margin-top: 7%;
+    margin-top: 90px;
+    width:90%;
+    margin-left: 5%;
 }
 .tableContainer{
     width:90%;
@@ -15,8 +17,6 @@ tbody>tr>td{
     position:relative;
 }
 th {
-    background-color: #28a745;
-    color: white;
     width:10%;
     margin-left:100px;
 }
@@ -41,10 +41,6 @@ th {
 	overflow-x: scroll;
 	margin-bottom: 25px;
 }
-tr:hover
-{
-    background-color: #d3ece5a6 !important;    
-}
 .force-overflow
 {
 	min-height:400px;
@@ -53,7 +49,7 @@ tr:hover
 #tableID::-webkit-scrollbar-track
 {
 	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	background-color: #F5F5F5;
+	background-color: #ffffff;
 }
 
 #tableID::-webkit-scrollbar

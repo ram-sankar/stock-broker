@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartsModule } from 'ng2-charts';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +18,8 @@ import { MySharesComponent } from './components/my-shares/my-shares.component';
 import { SellComponent } from './components/sell/sell.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ViewComponent } from './components/view/view.component'
+import { LogoutComponent } from './components/logout/logout.component';
+import { UnderProgressComponent } from './components/under-progress/under-progress.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +32,9 @@ import { ViewComponent } from './components/view/view.component'
     MySharesComponent,
     SellComponent,
     ProfileComponent,
-    ViewComponent
+    ViewComponent,
+    LogoutComponent,
+    UnderProgressComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,9 @@ import { ViewComponent } from './components/view/view.component'
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule, 
-    ChartsModule
+    ChartsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,7 +20,7 @@ export class SellComponent implements OnInit {
       this.companyId = params.get('id'); 
       });
 
-      this.getDataservice.getMyShares(sessionStorage.getItem('username'))
+      this.getDataservice.getMyShares(localStorage.getItem('username'))
       .subscribe(
         data => {
             for(let i=0;i<data.length;i++)
@@ -39,7 +39,7 @@ export class SellComponent implements OnInit {
   }
   sellItem()
   {
-    this.getDataservice.sellShare(sessionStorage.getItem('username'), this.companyId, this.quantity)
+    this.getDataservice.sellShare(localStorage.getItem('username'), this.companyId, this.quantity)
       .subscribe(
         data => {
             if(data.status=="success")

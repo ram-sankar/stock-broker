@@ -90,10 +90,10 @@
  
                 <div class="row">
                 <div class="col-md-6">
-                    <label>Volume</label>
+                    <label>Cost When You Bought :</label>
                 </div>
                 <div class="col-md-6">
-                    <p>: {{companyDetails.volume}}</p>
+                    <p>: {{companyDetails.bought_rate}}</p>
                 </div>
                 </div>
             </div>
@@ -101,7 +101,7 @@
         
         <div *ngIf="companyDetails" class=" d-flex justify-content-center">
             <div class="about">
-                <div class="sell-heading">Cost When You Bought :</div><div class="sell-value"> {{companyDetails.bought_rate}}</div><br><br>
+                <div class="sell-heading sell-heading1">Current Rate :</div><div class="sell-value"> {{companyDetails.current_rate}}</div><br>
                 <div class="sell-heading">Available Quantity :</div><div class="sell-value"> {{companyDetails.quantity}}</div>
             </div>
         </div>
@@ -120,7 +120,7 @@
                         
                     </div>
                     <div class="col-sm-4">
-                        <button type="submit" [disabled]="!checkQuantity(qty,companyDetails.quantity)" class="btn btn-success sell-btn" (click)="sellItem()">Sell </button>
+                        <button type="submit" [disabled]="!checkQuantity(qty,companyDetails.quantity)" class="btn btn-primary sell-btn" (click)="sellItem()">Sell </button>
                     </div>
                 </div>               
                

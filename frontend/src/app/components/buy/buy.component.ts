@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { GetDataService } from '../../services/get-data.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-buy',
@@ -12,7 +13,10 @@ export class BuyComponent implements OnInit {
   companyId = '';
   quantity = '';
   companyDetails;
-  constructor(private router: Router, private getDataservice: GetDataService, private _Activatedroute:ActivatedRoute) {   }
+  constructor(private router: Router, 
+              private getDataservice: GetDataService, 
+              private _Activatedroute:ActivatedRoute,
+              private toastr: ToastrService) {   }
 
   ngOnInit() {
     this._Activatedroute.paramMap.subscribe(params => { 
@@ -32,11 +36,13 @@ export class BuyComponent implements OnInit {
 
   buyItem() 
   {
-    this.getDataservice.buyShare( sessionStorage.getItem('username'), this.companyId, this.quantity)
+    this.getDataservice.buyShare( localStorage.getItem('username'), this.companyId, this.quantity)
       .subscribe(
-        data => {
+        data => {console.log(data)
           if(data.status=="success")
-            this.router.navigate(['my-shares'])
+            this.router.navigate(['my-shares'])          
+          else if(data.status=="insufficient balance")
+            this.toastr.error("",'Insufficient balance in your account',{positionClass:"toast-bottom-center"});
         },
         error => {
             console.log(error)

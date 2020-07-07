@@ -8,16 +8,21 @@ import { SellComponent } from './components/sell/sell.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ViewComponent } from './components/view/view.component';
 import { MySharesComponent } from './components/my-shares/my-shares.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { UnderProgressComponent } from './components/under-progress/under-progress.component'
 
 export const AppRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'watch', component: WatchListComponent },
   { path: 'buy/:id', component: BuyComponent },
   { path: 'sell/:id', component: SellComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'view/:id', component: ViewComponent },
-  { path: 'my-shares', component: MySharesComponent }
+  { path: 'my-shares', component: MySharesComponent },
+  { path: 'gainers', component: UnderProgressComponent },
+  { path: 'losers', component: UnderProgressComponent },
+  { path: 'logout', component: LogoutComponent }
 ];
 
 @NgModule({

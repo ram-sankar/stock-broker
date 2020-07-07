@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { GetDataService } from '../../services/get-data.service';
+import { AuthenticationService } from '../../services/authenticate.service'
 
 @Component({
   selector: 'app-home',
@@ -10,7 +12,10 @@ import { GetDataService } from '../../services/get-data.service';
 export class HomeComponent implements OnInit {
 
   companyDetails;
-  constructor(private router: Router,private getDataservice: GetDataService) { }
+  constructor(private router: Router, 
+              private getDataservice: GetDataService, 
+              private toastr: ToastrService,
+              private loginService:AuthenticationService) { }
 
   ngOnInit() {
     this.getDataservice.getAllCompany()
@@ -24,12 +29,15 @@ export class HomeComponent implements OnInit {
     )
   }
 
-  addToWatchlist(companyId)
+  addToWatchlist(companyId, companyName)
   {
-    this.getDataservice.addWatchList(sessionStorage.getItem('username'),companyId)
+    this.getDataservice.addWatchList(localStorage.getItem('username'),companyId)
     .subscribe(
-      data => {
-          console.log(data);
+      data => {console.log(data)
+        if(data.status=='company exist')
+          this.toastr.error('Already Exsist to your watchlist', companyName,{positionClass:"toast-bottom-center"});
+        else
+          this.toastr.info('Successfully added to your Watch list', companyName,{positionClass:"toast-bottom-center"});
       },
       error => {
           console.log(error)

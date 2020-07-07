@@ -15,7 +15,7 @@
 .company-details label
 {
     font-weight: 600;
-    color:green
+    color:orangered
 }
 .company-details p
 {
@@ -28,17 +28,20 @@
 }
 .sell-heading
 {
-    font-weight: 600;
-    color:green;
-    font-size: 20px;
+    font-weight: 700;
+    color:orangered;
+    font-size: 17px;
     display:inline;
     margin-left:-100px;
 }
+.sell-heading1{
+    margin-left: -120px;
+}
 .sell-value
 {
-    font-weight: 600;
-    color:red;
-    font-size: 20px;
+    font-weight: 700;
+    color:orange;
+    font-size: 17px;
     position: absolute;
     display:inline;
     margin-left:5px;

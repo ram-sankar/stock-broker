@@ -1,24 +1,42 @@
 <header>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
         <a routerLink="/home" class="navbar-brand navbarHead">VShare</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active navbarList">
-                <a routerLink="/home" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item active navbarList">
-                <a routerLink="/my-shares" class="nav-link">MyShares</a>
-            </li>
-            <li class="nav-item active navbarList">
-                <a routerLink="/watch" class="nav-link">Watchlist</a>
-            </li>
-            <li class="nav-item active navbarList">
-                <a routerLink="/profile" class="nav-link">Profile</a>
-            </li>
+          <ul *ngIf="loginService.isUserLoggedIn()" class="navbar-nav ml-auto">
+              <li class="nav-item active navbarList">
+                  <a routerLink="/" class="nav-link">Company</a>
+              </li>
+              <li class="nav-item active navbarList">
+                  <a routerLink="/my-shares" class="nav-link">MyShares</a>
+              </li>
+              <li class="nav-item active navbarList">
+                  <a routerLink="/watch" class="nav-link">Watchlist</a>
+              </li>
+              <li class="nav-item active navbarList">
+                  <a routerLink="/profile" class="nav-link">Profile</a>
+              </li>
+              <li class="nav-item active navbarList">
+                  <a routerLink="/logout" class="nav-link">Logout</a>
+              </li>
+          </ul> 
+
+          <ul *ngIf="!loginService.isUserLoggedIn()" class="navbar-nav ml-auto">
+                <li class="nav-item active navbarList">
+                    <a routerLink="/" class="nav-link">Company</a>
+                </li>
+                <li class="nav-item active navbarList">
+                    <a routerLink="/gainers" class="nav-link">Gainers</a>
+                </li>
+                <li class="nav-item active navbarList">
+                    <a routerLink="/losers" class="nav-link">Losers</a>
+                </li>
+                <li class="nav-item active navbarList">
+                    <a routerLink="/login" class="nav-link">Login</a>
+                </li>
           </ul>    
         </div>               
       </nav>

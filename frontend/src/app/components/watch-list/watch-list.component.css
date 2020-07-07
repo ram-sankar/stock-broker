@@ -1,6 +1,8 @@
 .heading{
     text-align: center;
-    margin-top: 7%;
+    margin-top: 90px;
+    width:90%;
+    margin-left: 5%;
 }
 .tableContainer{
     width:90%;
@@ -23,9 +25,8 @@ th {
 
 .noData
 {
-    margin-top:10%;
-    font-size: 25px;
-    color:red;
+    margin-top:150px;
+    font-size: 22px;
     font-weight: 600;
 }
 .scrollbar

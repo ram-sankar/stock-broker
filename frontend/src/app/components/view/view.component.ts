@@ -22,7 +22,7 @@ export class ViewComponent implements OnInit {
       this.getDataservice.getOneCompany(this.companyId)
       .subscribe(
         data => {
-                this.companyDetails = data;  console.log(data)          
+                this.companyDetails = data;
         },
         error => {
             console.log(error)

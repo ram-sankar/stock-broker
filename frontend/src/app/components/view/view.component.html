@@ -23,7 +23,7 @@
         </div>
 
       </div>
-      <div class="card col-md-4 company-details">
+      <div *ngIf="companyDetails" class="card col-md-4 company-details">
             <div class="row">
               <div class="col-md-6">
                 <label>Company Name </label>
@@ -115,7 +115,7 @@
             </div>
             <br>
             <div class="heading">
-              <div class="btn btn-danger buy-btn" (click)="goToBuyPage()">Buy </div>
+              <div class="btn btn-primary buy-btn" (click)="goToBuyPage()">Buy </div>
             </div>
       </div>
     </div>

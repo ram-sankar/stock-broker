@@ -35,7 +35,7 @@
 
 </div> -->
 
-<div *ngIf=switchToLoginPage class="login bgimg" style="background-image: url('assets/images/bg.jpg');">
+<div *ngIf=switchToLoginPage class="login bgimg">
     <br/><br/><br/><br/>
         <form (ngSubmit)="checkLogin(mail,pass)">
             <div class="card align-items-center container containerLogin">
@@ -83,7 +83,7 @@
     </div>
     
     
-    <div *ngIf=!switchToLoginPage class="register bgimg" style="background-image: url('assets/images/bg.jpg');">
+    <div *ngIf=!switchToLoginPage class="register bgimg">
         <br/><br/>
     
         <form (ngSubmit)="registerNewUser()">

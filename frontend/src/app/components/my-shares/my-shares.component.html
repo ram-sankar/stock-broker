@@ -1,9 +1,9 @@
 <div class="heading">
-    <h2>My Shares</h2> 
 
-    <div class="tableContainer scrollbar overflow-auto force-overflow" id="tableID"> 
-        <table *ngIf="myShares" class="table table-striped">
-                <thead class="coulmn_head">
+    <div *ngIf="myShares" class="table-responsive-md " id=""> 
+        <h2>My Shares</h2> <br>    
+        <table class="table table-borderles table-hover">
+                <thead class="thead-light">
                 <tr>
                     <th>Company Name</th>
                     <th>Current Rate</th>
@@ -34,25 +34,20 @@
                         <td>{{elements.year_low}}</td>
                         <td>{{elements.year_high}}</td>
                         <td>
-                            <button (click)="goToDetailedView(elements.company_id)" type="button" class="btn btn-info sell">Details</button>
-                        </td>
-                        <td>
-                            <button (click)="goToSellPage(elements.company_id)" type="button" class="btn btn-dark sell">sell</button>
+                            <button (click)="goToDetailedView(elements.company_id)" type="button" class="btn btn-primary sell">Details</button>
                         </td>
                         <td>                                 
                             <button (click)="goToBuyPage(elements.company_id)" type="button" class="btn btn-warning">buy</button>
+                        </td>
+                        <td>
+                            <button (click)="goToSellPage(elements.company_id)" type="button" class="btn btn-dark sell">sell</button>
                         </td>
                     </tr>   
                     
                 </tbody>
         </table>
-
-        
-        <p *ngIf="!myShares" class="noData">
-            No Records Found
-        </p>
     </div>
-
-    
-    
+    <p *ngIf="!myShares" class="noData">
+        There are No Shares in your Account
+    </p>
 </div> 

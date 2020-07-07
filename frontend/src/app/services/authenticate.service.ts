@@ -28,12 +28,12 @@ export class AuthenticationService
     }
 
     isUserLoggedIn() {
-    let user = sessionStorage.getItem('username')
-    return !(user === null)
+      let user = localStorage.getItem('username');
+      return !(user === null)
     }
 
     logOut() {
-    sessionStorage.removeItem('username')
+      localStorage.removeItem('username')
     }
  
 }

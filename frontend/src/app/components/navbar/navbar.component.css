@@ -1,20 +1,19 @@
 .navbar{
     
-    margin-bottom:500px;
 }
 .navbarHead{
     margin-left:5%; 
-    font-weight: bold;
-    font-size: 24px;
+    font-weight: 600;
+    font-size: 22px;
 }
 .navbarContainer{
-    margin-right:20%;
+    margin-right:2%;
     color:black !important;
 }
 .navbarList{
-    margin-right:10%;
+    margin-right:5%;
     width:100%;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 500;
 }
 .username{
@@ -30,7 +29,7 @@
     color:#caccce;
 }
 .navbar-nav{
-    margin-left:25%;
+    margin-right:15%;
 }
 .navbarListLogout{
     margin-right: 5%;

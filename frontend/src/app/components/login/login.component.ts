@@ -48,10 +48,10 @@ export class LoginComponent{
         .subscribe( 
             data  => { 
                         if(data.status==='success')
-                        {                            
-                            sessionStorage.setItem('username', this.mailid);
+                        {          
+                            localStorage.setItem('username', this.mailid);
                             this.invalidLogin = false;
-                            this.router.navigate(['home'])
+                            this.router.navigate([''])
                         }
                         else
                         {
@@ -59,7 +59,7 @@ export class LoginComponent{
                             this.invalidLogin = true
                         }
                     },
-            error => { console.log(error);
+            error => { 
                         if(error.error.message==="Incorrect credentials" || error.error.message==="User doesn't exist")
                             this.errorMessage = error.error.message;
                         this.invalidLogin = true
@@ -71,7 +71,7 @@ export class LoginComponent{
     { 
         this.loginservice.addNewUser(this.mailid,this.username,this.phone,this.password)
         .subscribe( 
-            data  => { console.log(data);
+            data  => { 
                         this.switchToLoginPage = true;
                         this.password = '';
                         this.invalidUser = false;

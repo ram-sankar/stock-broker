@@ -12,9 +12,10 @@ export class MySharesComponent implements OnInit {
   constructor(private router: Router,private getDataservice: GetDataService) { }
   myShares;
   ngOnInit() {
-    this.getDataservice.getMyShares(sessionStorage.getItem('username'))
+    this.getDataservice.getMyShares(localStorage.getItem('username'))
     .subscribe(
       data => {
+        if(data.length)
           this.myShares = data;
       },
       error => {
