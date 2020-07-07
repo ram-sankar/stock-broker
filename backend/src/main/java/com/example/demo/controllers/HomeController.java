@@ -399,7 +399,7 @@ public class HomeController {
 			}
 			
 			int userAmount = user.get(0).getAmount_left();
-			int currentAmount = userAmount - qty*company.get(0).getCurrent_rate();
+			int currentAmount = userAmount + qty*company.get(0).getCurrent_rate();
 			
 			int userQty = myShares.get(0).getQuantity();
 			int currentQty = userQty - qty;
